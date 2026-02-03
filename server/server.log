@@ -1,0 +1,241 @@
+
+╔═══════════════════════════════════════╗
+║       AGENT POKER SERVER 🃏🤖          ║
+╠═══════════════════════════════════════╣
+║  HTTP:  http://localhost:3000          ║
+║  WS:    ws://localhost:3000            ║
+╚═══════════════════════════════════════╝
+  
+[Coordinator] Table table_1770094560468_ywad8avrm created: 1/2 blinds
+Default table created: table_1770094560468_ywad8avrm
+[WS] New connection: conn_1770094563528_kbuwv97au
+[WS] New connection: conn_1770094563528_3k83pw4jq
+[Coordinator] Agent Alfred joined table table_1770094560468_ywad8avrm at seat 0
+[Coordinator] Agent Bot joined table table_1770094560468_ywad8avrm at seat 1
+[Coordinator] Hand #1 started at table table_1770094560468_ywad8avrm
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] FLOP: 2c 8h 7h
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] TURN: 2c 8h 7h 3h
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] RIVER: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] Pot 4 (rake: 0) awarded to Alfred
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: 2c 8h 7h 3h 8d
+[Coordinator] Alfred: call
+[Coordinator] Hand #2 started at table table_1770094560468_ywad8avrm
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] FLOP: 4h 5s As
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] TURN: 4h 5s As Qc
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] RIVER: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] Pot 4 (rake: 0) awarded to Alfred
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 4h 5s As Qc 9s
+[Coordinator] Hand #3 started at table table_1770094560468_ywad8avrm
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] FLOP: Kh 4d 5d
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] TURN: Kh 4d 5d Th
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] RIVER: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] Pot 4 (rake: 0) awarded to Bot
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Bot: call
+[Coordinator] WAITING: Kh 4d 5d Th Ks
+[Coordinator] Alfred: call
+[Coordinator] Hand #4 started at table table_1770094560468_ywad8avrm
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] FLOP: 5h 4d 9c
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] TURN: 5h 4d 9c Kd
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] RIVER: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] Pot 4 (rake: 0) awarded to Bot
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Alfred: call
+[Coordinator] WAITING: 5h 4d 9c Kd Td
+[Coordinator] Bot: call
+[Coordinator] Agent Alfred left table table_1770094560468_ywad8avrm with 100
+[WS] Connection closed: conn_1770094563528_kbuwv97au
+[Coordinator] Agent Bot left table table_1770094560468_ywad8avrm with 100
+[WS] Connection closed: conn_1770094563528_3k83pw4jq

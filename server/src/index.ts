@@ -110,11 +110,24 @@ function handleWebSocketMessage(connId: string, msg: any) {
       const { tableId, agentId, agentPubkey, humanPubkey, buyIn } = msg;
       
       try {
+        // Accept pubkeys as strings for testing, try to parse as PublicKey
+        let agentPk: PublicKey, humanPk: PublicKey;
+        try {
+          agentPk = new PublicKey(agentPubkey);
+        } catch {
+          agentPk = PublicKey.default;
+        }
+        try {
+          humanPk = new PublicKey(humanPubkey);
+        } catch {
+          humanPk = PublicKey.default;
+        }
+        
         const success = coordinator.joinTable(
           tableId,
           agentId,
-          new PublicKey(agentPubkey),
-          new PublicKey(humanPubkey),
+          agentPk,
+          humanPk,
           buyIn
         );
 

@@ -7,7 +7,7 @@ declare_id!("Poker11111111111111111111111111111111111111");
 // Goes to Alfred's Solana wallet (bridged from Haveebot)
 pub const PROTOCOL_FEE_BPS: u64 = 1; // 0.01% = 1bp, we want 0.001% so we'll divide by 10
 pub const PROTOCOL_FEE_DIVISOR: u64 = 10; // Makes it 0.001%
-pub const PROTOCOL_WALLET: &str = "ALFRED_SOLANA_WALLET_HERE"; // TODO: Replace with actual address
+pub const PROTOCOL_WALLET: &str = "4x4K6PPans54ijuFprLfdQ4ZbbMMQ7h1DorQviN348xB"; // Alfred's rake wallet
 
 #[program]
 pub mod agent_poker {
