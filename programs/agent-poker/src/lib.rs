@@ -3,6 +3,12 @@ use anchor_spl::token::{Token, TokenAccount, Transfer};
 
 declare_id!("Poker11111111111111111111111111111111111111");
 
+// Protocol fee: 0.001% (1 basis point = 0.01%, so 0.1 bp)
+// Goes to Alfred's Solana wallet (bridged from Haveebot)
+pub const PROTOCOL_FEE_BPS: u64 = 1; // 0.01% = 1bp, we want 0.001% so we'll divide by 10
+pub const PROTOCOL_FEE_DIVISOR: u64 = 10; // Makes it 0.001%
+pub const PROTOCOL_WALLET: &str = "ALFRED_SOLANA_WALLET_HERE"; // TODO: Replace with actual address
+
 #[program]
 pub mod agent_poker {
     use super::*;
@@ -33,6 +39,7 @@ pub mod agent_poker {
         table.current_turn = 0;
         table.community_cards = [0u8; 5];
         table.community_card_count = 0;
+        table.accumulated_rake = 0;
         table.bump = ctx.bumps.table;
 
         msg!("Table {} created with {}/{} blinds", table_id, small_blind, big_blind);
@@ -189,7 +196,7 @@ pub mod agent_poker {
         Ok(())
     }
 
-    /// Settle the hand and distribute pot
+    /// Settle the hand and distribute pot (with protocol rake)
     pub fn settle_hand(
         ctx: Context<SettleHand>,
         winner_position: u8,
@@ -200,15 +207,45 @@ pub mod agent_poker {
         require!(table.state == TableState::River || count_active_players(table) == 1, ErrorCode::HandNotComplete);
         require!(winner_seat.position == winner_position, ErrorCode::InvalidWinner);
 
-        // Transfer pot to winner
-        winner_seat.stack += table.pot;
+        let pot = table.pot;
         
-        msg!("Player {} wins pot of {}", winner_position, table.pot);
+        // Calculate protocol rake: 0.001% of pot
+        // rake = pot * 1 / 10000 / 10 = pot / 100000
+        let rake = pot / 100_000; // 0.001%
+        let winner_amount = pot - rake;
+        
+        // Transfer rake to protocol wallet
+        if rake > 0 {
+            // In production: transfer rake to PROTOCOL_WALLET via CPI
+            // For now, accumulate in table.accumulated_rake
+            table.accumulated_rake += rake;
+            msg!("Protocol rake: {} (0.001%)", rake);
+        }
+        
+        // Transfer remaining pot to winner
+        winner_seat.stack += winner_amount;
+        
+        msg!("Player {} wins {} (pot {} - rake {})", winner_position, winner_amount, pot, rake);
 
         // Reset for next hand
         table.pot = 0;
         table.state = TableState::BetweenHands;
 
+        Ok(())
+    }
+    
+    /// Withdraw accumulated rake to protocol wallet (admin only)
+    pub fn withdraw_rake(ctx: Context<WithdrawRake>) -> Result<()> {
+        let table = &mut ctx.accounts.table;
+        let rake_amount = table.accumulated_rake;
+        
+        require!(rake_amount > 0, ErrorCode::NoRakeToWithdraw);
+        
+        // Transfer to protocol wallet
+        // In production: CPI to token program
+        msg!("Withdrawing {} rake to protocol wallet", rake_amount);
+        
+        table.accumulated_rake = 0;
         Ok(())
     }
 
@@ -353,6 +390,22 @@ pub struct SettleHand<'info> {
 }
 
 #[derive(Accounts)]
+pub struct WithdrawRake<'info> {
+    #[account(mut)]
+    pub table: Account<'info, Table>,
+    
+    /// Protocol wallet to receive rake
+    #[account(mut)]
+    pub protocol_wallet: SystemAccount<'info>,
+    
+    /// Table creator (admin) must sign
+    #[account(constraint = admin.key() == table.creator)]
+    pub admin: Signer<'info>,
+    
+    pub system_program: Program<'info, System>,
+}
+
+#[derive(Accounts)]
 pub struct LeaveTable<'info> {
     #[account(mut)]
     pub table: Account<'info, Table>,
@@ -393,11 +446,12 @@ pub struct Table {
     pub current_turn: u8,
     pub community_cards: [u8; 5],
     pub community_card_count: u8,
+    pub accumulated_rake: u64,  // Protocol fee accumulator
     pub bump: u8,
 }
 
 impl Table {
-    pub const SPACE: usize = 8 + 32 + 8 + 8 + 8 + 8 + 1 + 1 + 8 + 1 + 8 + 1 + 1 + 5 + 1 + 1 + 64;
+    pub const SPACE: usize = 8 + 32 + 8 + 8 + 8 + 8 + 1 + 1 + 8 + 1 + 8 + 1 + 1 + 5 + 1 + 8 + 1 + 64;
 }
 
 #[account]
@@ -480,4 +534,6 @@ pub enum ErrorCode {
     InvalidWinner,
     #[msg("Cannot leave during active hand")]
     CannotLeaveDuringHand,
+    #[msg("No rake to withdraw")]
+    NoRakeToWithdraw,
 }
